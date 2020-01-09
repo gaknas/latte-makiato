@@ -2,12 +2,14 @@ import sqlite3
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QTableWidgetItem
+from mainui import Ui_MainWindow
+from addForm import Ui_Form
 
 
-class MyWidget(QMainWindow):
+class MyWidget(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('main.ui', self)
+        self.setupUi(self)
         self.loadTable()
         self.pushButton.clicked.connect(self.open_second_form)
 
@@ -30,10 +32,10 @@ class MyWidget(QMainWindow):
         self.second_form.show()
 
 
-class secondForm(QWidget):
+class secondForm(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        uic.loadUi('addEditCoffeeForm.ui', self)
+        self.setupUi(self)
         self.initUI()
 
     def initUI(self):
