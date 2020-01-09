@@ -1,6 +1,5 @@
 import sqlite3
 import sys
-from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QTableWidgetItem
 from mainui import Ui_MainWindow
 from addForm import Ui_Form
